@@ -1,0 +1,18 @@
+= form_for(@invoice) do |f|
+  = f.label :client
+  = f.select :client_id, Client.data_for_select
+  %br
+  
+  = f.label :date
+  = f.date_select :date
+  %br
+
+  = f.label :invoice_id
+  = f.text_field :invoice_id
+  %br
+  
+  #items_fields
+    = f.fields_for :items do |builder|
+      = render "item_fields", :f => builder
+    = link_to_add_fields "Add line", f, :items
+  = f.submit

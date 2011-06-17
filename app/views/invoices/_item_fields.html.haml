@@ -1,0 +1,7 @@
+.fields
+  = link_to_remove_fields "-", f
+  = f.text_field :quantity, :value => "1"
+  = f.text_field :type, :value => "service"
+  = f.text_area  :description, :rows => 3
+  = f.text_field :price
+  = f.select :tax_id, []

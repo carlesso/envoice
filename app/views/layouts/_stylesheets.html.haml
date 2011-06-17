@@ -1,0 +1,6 @@
+-# CSS: implied media="all"
+= stylesheet_link_tag 'style', :media => 'all'
+
+-# Append your own using content_for :stylesheets
+= stylesheet_link_tag 'envoice', :media => 'all'
+= yield :stylesheets

@@ -1,0 +1,16 @@
+.fields
+  %h2 Contact
+  = f.label :first_name
+  = f.text_field :first_name
+  %br
+  = f.label :last_name
+  = f.text_field :last_name
+  %br
+  = f.label :email
+  = f.text_field :email
+  %br
+  = f.label :phone
+  = f.text_field :phone
+  %br
+
+  = link_to_remove_fields "remove", f
