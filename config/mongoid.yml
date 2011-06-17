@@ -8,12 +8,12 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: mongo_development
+  database: envoice_development
 
 test:
   <<: *defaults
-  database: mongo_test
+  database: envoice_test
 
 # set these environment variables on your prod server
 production:
-  url: ENV['MONGOLAB_URI']
+  uri: <%= ENV['MONGOHQ_URL'] %>
