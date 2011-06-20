@@ -1,11 +1,15 @@
 class ClientsController < ApplicationController
+  def index
+    @clients = current_user.clients.paginate :page => 1, :per_page => 10
+  end
+  
   def new
-    @client = Client.new
+    @client = current_user.clients.new
     @client.contacts.build
   end
   
   def create
-    @client = Client.new params[:client]
+    @client = current_user.clients.new params[:client]
     respond_to do |format|
       if @client.save
         format.html { redirect_to(@client, :notice => 'Client was successfully inserted.') }
@@ -18,10 +22,18 @@ class ClientsController < ApplicationController
   end
   
   def show
-    @client = Client.find params[:id]
+    @client = current_user.clients.find params[:id]
     respond_to do |format|
       format.html
       format.xml  { render :xml => @client }
+    end
+  end
+  
+  def destroy
+    @client = current_user.clients.find(params[:id])
+    @client.destroy
+    respond_to do |format|
+      format.html { redirect_to(clients_path, :notice => 'Client was successfully removed.')  }
     end
   end
 end

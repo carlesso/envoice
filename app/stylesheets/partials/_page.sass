@@ -51,9 +51,15 @@ small
 // Add your own custom styles below
 //-----------------------------------
 
+body
+  font: 12px/18px "Lucida Grande",Lucida,Verdana,sans-serif
+
 html
   +background-image(linear-gradient(#fff, #aaa))
   background-repeat: no-repeat
+
+.txt-r
+  text-align: right
   
 #container 
   width: 960px
@@ -62,3 +68,30 @@ html
   @include border-radius(10px, 10px)
   padding: 10px
 
+.field_with_errors
+  border: 1px solid red
+
+#new_client
+  label
+    width: 150px
+    text-align: right
+    display: block
+    float: left
+    padding:
+      right: 15px
+  textarea
+    width: 200px
+    height: 50px
+
+#invoice
+  table
+    width: 90%
+    margin: 0 auto
+  thead
+    background-color: black
+    color: white
+  
+  tfoot
+    border-top: 1px solid black
+    tr.total
+      font-weight: bold

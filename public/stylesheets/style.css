@@ -295,6 +295,11 @@ small {
 }
 
 /* line 54, ../../app/stylesheets/partials/_page.sass */
+body {
+  font: 12px/18px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/* line 57, ../../app/stylesheets/partials/_page.sass */
 html {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #aaaaaa));
   background-image: -webkit-linear-gradient(#ffffff, #aaaaaa);
@@ -305,7 +310,12 @@ html {
   background-repeat: no-repeat;
 }
 
-/* line 58, ../../app/stylesheets/partials/_page.sass */
+/* line 61, ../../app/stylesheets/partials/_page.sass */
+.txt-r {
+  text-align: right;
+}
+
+/* line 64, ../../app/stylesheets/partials/_page.sass */
 #container {
   width: 960px;
   margin: 20px auto;
@@ -317,6 +327,44 @@ html {
   -khtml-border-radius: 10px / 10px;
   border-radius: 10px / 10px;
   padding: 10px;
+}
+
+/* line 71, ../../app/stylesheets/partials/_page.sass */
+.field_with_errors {
+  border: 1px solid red;
+}
+
+/* line 75, ../../app/stylesheets/partials/_page.sass */
+#new_client label {
+  width: 150px;
+  text-align: right;
+  display: block;
+  float: left;
+  padding-right: 15px;
+}
+/* line 82, ../../app/stylesheets/partials/_page.sass */
+#new_client textarea {
+  width: 200px;
+  height: 50px;
+}
+
+/* line 87, ../../app/stylesheets/partials/_page.sass */
+#invoice table {
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 90, ../../app/stylesheets/partials/_page.sass */
+#invoice thead {
+  background-color: black;
+  color: white;
+}
+/* line 94, ../../app/stylesheets/partials/_page.sass */
+#invoice tfoot {
+  border-top: 1px solid black;
+}
+/* line 96, ../../app/stylesheets/partials/_page.sass */
+#invoice tfoot tr.total {
+  font-weight: bold;
 }
 
 /*/mediaquery*/

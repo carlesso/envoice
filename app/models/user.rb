@@ -4,7 +4,7 @@ class User
   field :name
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false    
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :tax_1_name, :tax_2_name, :tax_1_percentage, :tax_2_percentage, :tax_2_include_1
   references_many :authentications, :dependent => :delete
   
   
@@ -13,12 +13,12 @@ class User
   has_many :invoices
   
   
-  field :taxes, :type => Hash
+  # field :taxes, :type => Hash
   
-  # field :tax_1_name, :type => String
-  # field :tax_2_name, :type => String
-  # field :tax_1_percentage, :type => Integer
-  # field :tax_2_percentage, :type => Integer
+  field :tax_1_name, :type => String
+  field :tax_2_name, :type => String
+  field :tax_1_percentage, :type => Integer
+  field :tax_2_percentage, :type => Integer
   
   field :tax_2_include_1, :type => Boolean
   
@@ -29,12 +29,15 @@ class User
   def tax_data_for_select
     d = []
     unless tax_1_percentage.nil?
-      d << [tax_1_name, tax_1_percentage]
+      d << [tax_1_name, 1]
     end
-    unless tax_1_percentage.nil?
-      d << [tax_1_name, tax_1_percentage]
+    unless tax_2_percentage.nil?
+      d << [tax_2_name, 2]
     end
-
+    if d.size == 2
+      d << ["both", 3]
+    end
+    d
   end
   
   

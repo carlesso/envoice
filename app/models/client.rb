@@ -17,8 +17,14 @@ class Client
   
   accepts_nested_attributes_for :contacts, :allow_destroy => true
 
+  # Validations
+  validates_presence_of :company, :message => "The company is mandatory"
+  validates_presence_of :address_line_1
+  validates_presence_of :tax_id
+
   def self.data_for_select
     only(:company, :id).all.collect{|c| [c.company, c.id]} 
   end
+
 
 end

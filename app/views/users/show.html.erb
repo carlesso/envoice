@@ -1,2 +1,5 @@
-<h1>Users#show</h1>
+<h1>Your Data</h1>
 <p>User: <%= @user.name %></p>
+<p><b><%= @user.tax_1_name %></b>: <%= @user.tax_1_percentage %></p>
+<p><b><%= @user.tax_2_name %></b>: <%= @user.tax_2_percentage %></p>
+<p><b>Tax 2 includes tax 1<b/>: <%= @user.tax_2_include_1 %></p>

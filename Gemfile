@@ -18,3 +18,8 @@ gem "haml"
 gem "html5-boilerplate"
 gem 'jquery-rails'
 gem 'sass'
+gem 'hirb'
+gem 'cancan'
+gem 'workflow'
+
+gem 'pdfkit'

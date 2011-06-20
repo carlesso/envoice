@@ -1,0 +1,21 @@
+%h1 Listing Invoices
+
+= link_to "New Invoice", new_invoice_path
+
+%table
+  %thead
+    %tr
+      %th ID
+      %th Date
+      %th Client
+      %th Amount
+      %th Status
+  %tbody
+    - @invoices.each do |i|
+      %tr
+        %td
+          = link_to i.invoice_id, i
+        %td #{i.date}
+        %td #{i.client.try :company}
+        %td #{i.amount}
+        %td Draft

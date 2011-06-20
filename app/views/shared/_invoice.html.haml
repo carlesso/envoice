@@ -1,0 +1,41 @@
+#invoice
+  .header
+  .body
+    %table
+      %thead
+        %tr
+          %th Quantità
+          %th Descrizione
+          %th Prezzo
+          %th Totale
+      %tbody
+        - invoice.items.each do |i|
+          %tr
+            %td #{i.quantity}
+            %td #{i.description}
+            %td.txt-r #{i.price}
+            %td.txt-r #{i.total}
+      %tfoot
+        %tr
+          %td
+          %td
+          %td.txt-r Subtotale
+          %td.txt-r #{invoice.amount}
+        %tr
+          %td
+          %td
+          %td.txt-r #{invoice.user.tax_1_name}
+          %td.txt-r #{invoice.tax_1}
+        %tr
+          %td
+          %td
+          %td.txt-r #{invoice.user.tax_2_name}
+          %td.txt-r #{invoice.tax_2}
+        %tr.total
+          %td
+          %td
+          %td.txt-r Totale
+          %td.txt-r #{invoice.total}
+        
+            
+            

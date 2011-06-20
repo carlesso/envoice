@@ -1,0 +1,17 @@
+= form_for @user do |f|
+  = f.label :tax_1_name
+  = f.text_field :tax_1_name
+  %br
+  = f.label :tax_1_percentage
+  = f.text_field :tax_1_percentage
+  %br
+  = f.label :tax_2_name
+  = f.text_field :tax_2_name
+  %br
+  = f.label :tax_2_percentage
+  = f.text_field :tax_2_percentage
+  %br
+  = f.label :tax_2_include_1
+  = f.check_box :tax_2_include_1
+  %br
+  = f.submit

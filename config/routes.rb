@@ -3,7 +3,7 @@ Envoice::Application.routes.draw do
   match '/registrations' => 'registrations#email'
   root :to => "home#index"
   devise_for :users
-  resources :users, :only => :show
+  resources :users#, :only => :show
   resources :authentications
   resources :clients
   resources :invoices
