@@ -21,5 +21,6 @@ gem 'sass'
 gem 'hirb'
 gem 'cancan'
 gem 'workflow'
+gem 'wicked_pdf'
 
-gem 'pdfkit'
+# gem 'pdfkit'

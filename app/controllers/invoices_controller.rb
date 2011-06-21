@@ -26,9 +26,16 @@ class InvoicesController < ApplicationController
   def show
     # @invoice = Invoice.find params[:id]
     respond_to do |format|
-      format.html
+      format.html {
+        render :layout => false if request.env["REQUEST_PATH"].include?(".pdf")
+      }
       format.xml  { render :xml => @invoice }
-      format.pdf
+      format.pdf  {
+        render :wkhtmltopdf => WKHTMLTOPDF_BIN,
+               :pdf => "#{@invoice.user.name} - Invoice #{@invoice.invoice_id}",
+               # :layout => false,
+               :encoding => "utf-8"
+        }
     end
   end
   def edit
