@@ -11,4 +11,8 @@ class Ability
       invoice.user == user
     end
   end
+  
+  def prova(text)
+    
+  end
 end
